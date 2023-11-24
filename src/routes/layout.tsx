@@ -1,6 +1,6 @@
 import { component$, Slot, useStyles$ } from "@builder.io/qwik";
 
-import Header from "~/components/shared/header/header";
+import Navbar from "~/components/shared/navbar/navbar";
 import Footer from "~/components/shared/footer/footer";
 
 import styles from "./styles.css?inline";
@@ -9,7 +9,7 @@ export default component$(() => {
   useStyles$(styles);
   return (
     <>
-      <Header />
+      <Navbar />
       <main class="flex flex-col items-center justify-center">
         <Slot />
       </main>
