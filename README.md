@@ -1,65 +1,60 @@
-# Qwik City App ⚡️
+<p align="center">
+  <a href="https://docs.docker.com/" target="blank"><img src="https://devtalles.com/images/qwik.png" width="200" alt="qwik Logo" /></a>
+</p>
 
-- [Qwik Docs](https://qwik.builder.io/)
-- [Discord](https://qwik.builder.io/chat)
-- [Qwik GitHub](https://github.com/BuilderIO/qwik)
-- [@QwikDev](https://twitter.com/QwikDev)
-- [Vite](https://vitejs.dev/)
+# qwik - Instalaciones recomendadas
 
----
+1. [Node JS](https://nodejs.org/es/)
 
-## Project Structure
+2. [VSCode - Visual Studio Code](https://code.visualstudio.com/)
 
-This project is using Qwik with [QwikCity](https://qwik.builder.io/qwikcity/overview/). QwikCity is just an extra set of tools on top of Qwik to make it easier to build a full site, including directory-based routing, layouts, and more.
+3. [Google Chrome](https://www.google.com.mx/intl/es-419/chrome/?brand=CHBD&gclid=Cj0KCQiAtrnuBRDXARIsABiN-7AAMm13Ae3KDIib46Laxfe6tzD_w4yvDdpq5XsPw1eNlOkZ_0-3x3IaAvLEEALw_wcB&gclsrc=aw.ds)
 
-Inside your project, you'll see the following directory structure:
+4. [Postman](https://www.postman.com/downloads/)
+
+5. [Git](https://git-scm.com/)
 
 ```
-├── public/
-│   └── ...
-└── src/
-    ├── components/
-    │   └── ...
-    └── routes/
-        └── ...
+git config --global user.name "Tu nombre"
+git config --global user.email "Tu correo"
 ```
 
-- `src/routes`: Provides the directory-based routing, which can include a hierarchy of `layout.tsx` layout files, and an `index.tsx` file as the page. Additionally, `index.ts` files are endpoints. Please see the [routing docs](https://qwik.builder.io/qwikcity/routing/overview/) for more info.
+## Extensiones de VSCode
 
-- `src/components`: Recommended directory for components.
+- [qwik snippets](https://marketplace.visualstudio.com/items?itemName=johnreemar.vscode-qwik-snippets)
 
-- `public`: Any static assets, like images, can be placed in the public directory. Please see the [Vite public directory](https://vitejs.dev/guide/assets.html#the-public-directory) for more info.
+- [qwik City Link Ref](https://marketplace.visualstudio.com/items?itemName=Raiondesu.qwik-city-link-autocomplete)
 
-## Add Integrations and deployment
+- [Auto Close Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag)
 
-Use the `yarn qwik add` command to add additional integrations. Some examples of integrations includes: Cloudflare, Netlify or Express Server, and the [Static Site Generator (SSG)](https://qwik.builder.io/qwikcity/guides/static-site-generation/).
+- [Activitus Bar](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.activitusbar)
 
-```shell
-yarn qwik add # or `yarn qwik add`
+- [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)
+
+- [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
+
+- [Paste JSON as Code](https://marketplace.visualstudio.com/items?itemName=quicktype.quicktype)
+
+- [Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)
+
+- [Terminal](https://marketplace.visualstudio.com/items?itemName=formulahendry.terminal)
+
+### Tema que estoy usando en VSCode y Wallpaper del curso:
+
+- [Aura Theme](https://marketplace.visualstudio.com/items?itemName=DaltonMenezes.aura-theme)
+
+- [Wallpapers Developer](https://drive.google.com/drive/folders/1ItU8rbSGJjnh2USOBGwaCo9nYKifPJ6m?usp=sharing)
+
+- [Iconos](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
+
+### Configuración de íconos para qwik
+
+1. Abrir **settings.json**
+2. Pegar esto
+
 ```
-
-## Development
-
-Development mode uses [Vite's development server](https://vitejs.dev/). The `dev` command will server-side render (SSR) the output during development.
-
-```shell
-npm start # or `yarn start`
-```
-
-> Note: during dev mode, Vite may request a significant number of `.js` files. This does not represent a Qwik production build.
-
-## Preview
-
-The preview command will create a production build of the client modules, a production build of `src/entry.preview.tsx`, and run a local server. The preview server is only for convenience to preview a production build locally and should not be used as a production server.
-
-```shell
-yarn preview # or `yarn preview`
-```
-
-## Production
-
-The production build will generate client and server modules by running both client and server build commands. The build command will use Typescript to run a type check on the source code.
-
-```shell
-yarn build # or `yarn build`
+{
+   "material-icon-theme.activeIconPack": "qwik",
+   // otras propiedades...
+}
 ```
