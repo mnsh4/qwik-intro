@@ -1,4 +1,4 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useSignal, useTask$ } from "@builder.io/qwik";
 
 interface Props {
   id: number;
@@ -9,6 +9,17 @@ interface Props {
 
 export const PokemonImage = component$(
   ({ id, size = 200, backImage = false, isVisible = true }: Props) => {
+    const imageLoaded = useSignal(false);
+
+    // useTask seria algo asi como un useEffect
+    useTask$(({ track }) => {
+      // quiero disparar este efecto cada vez que el id cambia
+      track(() => id);
+
+      // si el id cambia disparamos este efecto
+      imageLoaded.value = false;
+    });
+
     let imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
 
     if (backImage) {
@@ -16,7 +27,28 @@ export const PokemonImage = component$(
     }
 
     return (
-      <img src={imageUrl} alt="Pokemon Sprite" style={{ width: `${size}px` }} />
+      <div
+        class="flex items-center justify-center"
+        style={{ width: `${size}px`, height: `${size}px` }}
+      >
+        {!imageLoaded.value && <span>Cargando... </span>}
+
+        <img
+          src={imageUrl}
+          alt="Pokemon Sprite"
+          style={{ width: `${size}px` }}
+          onLoad$={() => {
+            imageLoaded.value = true;
+          }}
+          class={[
+            {
+              hidden: !imageLoaded.value,
+              "brightness-0": isVisible,
+            },
+            "transition-all",
+          ]}
+        />
+      </div>
     );
   },
 );
